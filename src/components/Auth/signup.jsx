@@ -33,7 +33,7 @@ export default function Signup() {
     // Insert user data into the 'users' table
     const { error: dbError } = await supabase
       .from("Users")
-      .insert([{ id: userId, email: email, name: username }]); // Use state `username`
+      .insert([{ id: userId, email: email, name: username }]); // Use state username
 
     if (dbError) {
       console.log("Database Insert Error:", dbError);
@@ -45,42 +45,48 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-900">
+    <div className="flex items-center justify-center min-h-screen bg-yellow-500">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Sign up</h2>
+        <h2 className="text-2xl font-bold text-center mb-4 text-yellow-700">Sign up</h2>
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Enter Name"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Enter Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-          <button className="w-full bg-blue-600 text-white p-2 rounded">
+          <div className="mb-2">
+            <input
+              type="text"
+              placeholder="Enter Name"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-600"
+              required
+            />
+          </div>
+          <div className="mb-2">
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-600"
+              required
+            />
+          </div>
+          <div className="mb-2">
+            <input
+              type="password"
+              placeholder="Enter Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-600"
+              required
+            />
+          </div>
+          <button className="w-full bg-yellow-600 text-white p-2 rounded">
             Sign up
           </button>
         </form>
         <div className="mt-4 text-center">
           Already have an account?
-          <Link to={"/login"} className="text-blue-600 ml-1">
+          <Link to={"/login"} className="text-yellow-600 ml-1">
             Log in
           </Link>
         </div>

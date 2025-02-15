@@ -25,9 +25,11 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-900">
+    <div className="flex items-center justify-center min-h-screen bg-yellow-500">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Log in!</h2>
+        <h2 className="text-2xl font-bold text-center mb-4 text-yellow-700">
+          Log in!
+        </h2>
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
@@ -35,7 +37,7 @@ export default function Login() {
             placeholder="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-600 mb-3"
             required
           />
           <input
@@ -43,17 +45,17 @@ export default function Login() {
             placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-600 mb-3"
             required
           />
-          <button className="w-full bg-blue-600 text-white p-2 rounded">
+          <button className="w-full bg-yellow-600 text-white p-2 rounded hover:bg-yellow-700">
             Log in
           </button>
         </form>
         <div className="mt-4 text-center">
           Don't have an account?
-          <Link to={"/signup"} className="text-blue-600 ml-1">
-            SignUp
+          <Link to={"/signup"} className="text-yellow-700 ml-1 hover:underline">
+            Sign Up
           </Link>
         </div>
       </div>

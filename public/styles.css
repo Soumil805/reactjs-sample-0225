@@ -106,3 +106,29 @@ form.create-note button {
   cursor: pointer;
   outline: none;
 }
+
+header {
+  display: flex;
+  background-color: #f5ba13;
+  margin: auto -16px;
+  padding: 24px 32px; /* Increase padding */
+  min-height: 80px; /* Set a minimum height */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  margin-right: 20px; 
+}
+
+.profile-photo img {
+  width: 60px;  /* Increase width */
+  height: 60px; /* Increase height */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff; /* Slightly thicker border */
+}
